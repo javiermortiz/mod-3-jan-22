@@ -1,19 +1,23 @@
 /*!!START SILENT */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Fruktur&display=swap');
 
+html {
+    font-size: 10px;
+}
 h1 {
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 10rem;
+    font-family: fantasy;
     padding: 20px;
     margin: 30px;
     font-weight: bold;
     text-decoration: wavy underline;
     color: red;
-    background-color: pink;
+    background-image: linear-gradient(to right top, #7df3fc, #6be4ff, #77d2ff, #99bdff, #bda5f5);
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 5rem;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     margin: 10px;
@@ -44,5 +48,6 @@ p {
 img {
     width: 100px;
     height: 300px;
+    display: none;
 }
 /*!!END */

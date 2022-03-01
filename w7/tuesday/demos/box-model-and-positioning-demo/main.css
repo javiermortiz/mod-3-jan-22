@@ -36,6 +36,7 @@ span {
     border: 1px solid red;
     background-color: white;
     height: 100px;
+    display: block;
 }
 
 .inline-block {
@@ -47,7 +48,6 @@ span {
 
 /* Parts of the box: content, padding, border and margin */
 .neighbor1 {
-    border: 1px solid red;
     background-color: white;
     display: inline-block;
     padding: 20px;
@@ -78,7 +78,7 @@ In box-sizing: border-box, it also includes padding, and border
     box-sizing: border-box;
     width: 200px;
     height: 200px;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid red;
     background-color: white;
 }
@@ -164,26 +164,39 @@ is positioned in a document. */
     background-color: #3466AA;
     border: 5px solid #114084;
     margin-right: 10px;
+}
+
+body {
+    height: 5000px;
+}
+
+.blue-box {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: #3466AA;
+    border: 5px solid #114084;
+    margin-right: 10px;
 
     /* position: static;
-    top: 50px;
+    top: 1000px;
     left: 50px; */
 
-    /* position: relative;
-    top: 50px; 
-    left: 50px;
-    z-index: -1; */
+    position: relative;
+    top: 3px;
+    left: 3px;
+    z-index: -1;
    
     /* position: absolute;
     top: 220px; 
     left: 300px; */
     
     /* position: fixed;
-    top: 500px;
+    top: 0;
     left: 200px; */
 
-    /* position: sticky;
-    top: 100px; */
+    position: sticky;
+    top: 100px;
 }
 
 /* For sticky */
