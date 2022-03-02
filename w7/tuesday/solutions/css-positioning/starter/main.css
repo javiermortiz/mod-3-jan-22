@@ -17,7 +17,7 @@ html, body {
 
 #yellow-box {
     background-color: #ffff00;
-    position: static;
+    position: ;
     bottom: 0;
     left: 0;
     right: 0;
@@ -27,9 +27,9 @@ html, body {
 
 #pink-box {
     background-color: #ff69b4;
-    position: relative;
+    position: ;
     bottom: 0;
-    left: 100px;
+    left: 0;
     right: 0;
     top: 0;
     z-index: ;
@@ -37,11 +37,11 @@ html, body {
 
 #blue-box {
     background-color: #00eeee;
-    position: absolute;
+    position: ;
     bottom: 0;
     left: 0;
     right: 0;
-    top: 100px;
+    top: 0;
     z-index: ;
 }
 
