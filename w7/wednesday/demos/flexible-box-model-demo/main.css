@@ -18,7 +18,7 @@ body {
     border: 2px solid red;
     border-radius: 5px;
     padding: 20px;
-    width: 80px;
+    width: 100px;
     height: 80px;
     text-align: center;
 }
@@ -28,9 +28,10 @@ body {
     width: 80%;
     height: 500px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap:wrap;
     margin: 50px;
 }
 
@@ -52,6 +53,8 @@ body {
     background-color: white;
     margin: 50px;
     display: inline-flex;
+
+    /* flex-direction: column; */
     gap: 20px;
     padding: 20px;
 }
@@ -106,14 +109,14 @@ flex property on a child of a flex-container as a shorthand for grow, shrink and
 
 /* flex-basis: What is the size of the item before growing or shrinking? */
 /* .box3 > div {
-    flex: 0 1 200px;
+    flex: 0 1 auto;
 } */
 
 /* flex-shrink: How much negative free space can be removed from this item? */
-/* .box3 > div {
-    flex: 0 1 200px;
+.box3 > div {
+    flex: 0 0 200px;
 }
 
 div.one {
-    flex: 0 2 200px;
-} */
+    flex: 0 0 200px;
+}
