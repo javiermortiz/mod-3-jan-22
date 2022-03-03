@@ -85,7 +85,7 @@ header {
 /* ----- Phase 1 - Moderate Screen ----- */
 
 /*!!START */
-@media screen and (min-width: 851px) and (max-width: 1219px) {
+@media screen and (min-width: 820px) and (max-width: 1219px) {
     .page {
         flex-direction: column;
     }
@@ -119,16 +119,26 @@ header {
 /* ===== PRINTING ===== */
 
 /* Phase 2 */
-
 /*!!START */
 @media print {
-    header, .sidebar, .image-box {
+    * {
+        filter:none;
+    }
+    
+    .story-box {
+            background-color: blue;
+            padding: 0;
+            filter: none;
+        }
+    
+
+    /* header, .sidebar, .image-box {
         display: none;
         visibility: hidden;
-    }
+    } */
 
     .story-box {
-        background-color: white;
+        /* background-color: white; */
         padding: 0;
         filter: none;
     }
