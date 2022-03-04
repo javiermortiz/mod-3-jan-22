@@ -13,11 +13,16 @@ div {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    transition: width 2s, background-color 2s .5s;
+    transition: width 2s 1s, height 2s 3s;
 }
 
 div:hover {
     width: 100px;
+    height: 500px;
     border: 1px solid red;
     background-color: pink;
+}
+
+div.modified{
+   
 }
