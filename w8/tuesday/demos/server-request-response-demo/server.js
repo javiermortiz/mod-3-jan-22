@@ -1,20 +1,27 @@
 const http = require('http');
 const fs = require("fs");
-const { runInNewContext } = require('vm');
+
 
 let dailyMessage = "hello";
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
     if (req.method === 'GET' && req.url === '/') {
+        const htmlPage = fs.readFileSync('index.html', 'utf-8');
+        console.log(htmlPage);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
-
-        res.write(`${dailyMessage}`);
-        res.write(`<form action="/messages" method="post"><input name="dailyMessage"></form>`)
+        res.write(htmlPage);
         return res.end();
     }
 
+    if (req.method === "GET" && req.url === "/main.css") {
+        const resBody = fs.readFileSync("main.css");
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/css");
+        return res.end(resBody);
+    }
+    
     let reqBody = "";
     req.on("data", (data) => {
         reqBody += data;
