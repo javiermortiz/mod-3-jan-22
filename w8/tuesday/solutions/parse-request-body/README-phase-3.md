@@ -115,7 +115,7 @@ browser once you submit:
 [`string.replace`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 [`array.map`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 [`array.reduce`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-[`decodeuricomponent`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
+[`decodeuricomponent(str)`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent
 [percent encoding]: https://developer.mozilla.org/en-US/docs/Glossary/percent-encoding
 [http://localhost:5000]: http://localhost:5000
 [parse-request-body-practice-result]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-08/practice-parse-request-body/parsed-request-body-result.png
