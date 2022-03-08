@@ -25,9 +25,13 @@ const server = http.createServer((req, res) => {
     if (req.method === "GET" && req.url === '/tasks') {
         console.log(database);
         const htmlPage = fs.readFileSync("tasks.html", "utf-8");
+        const taskList = database.map(task => {
+            return `<li>${task.tasks} - ${task.time}</li>`
+        });
+        const resBody = htmlPage.replace(/#{tasks}/g, taskList.join(''));
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/html");
-        return res.end(htmlPage);
+        return res.end(resBody);
     }
 
     let reqBody = "";
