@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require("fs");
 
 
-let dailyMessage = "hello";
+const database = [];
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
@@ -20,6 +20,14 @@ const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "text/css");
         return res.end(resBody);
+    }
+
+    if (req.method === "GET" && req.url === '/tasks') {
+        console.log(database);
+        const htmlPage = fs.readFileSync("tasks.html", "utf-8");
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "text/html");
+        return res.end(htmlPage);
     }
 
     let reqBody = "";
@@ -44,9 +52,14 @@ const server = http.createServer((req, res) => {
         }
         if (req.method === "POST" && req.url === "/tasks") {
             console.log(req.body);
+            database.push(req.body);
             res.statusCode = 302;
             res.setHeader("Location", "/tasks");
             return res.end();
+            // const htmlPage = fs.readFileSync("tasks.html", "utf-8");
+            // res.statusCode = 200;
+            // res.setHeader("Content-Type", "text/html");
+            // return res.end(htmlPage);
         }
     });
 });
