@@ -51,10 +51,13 @@ const server = http.createServer((req, res) => {
   }
 
   // Phase 1
-  const resBody = fs.readFileSync("./index.html");
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-  res.end(resBody);
+  if (req.method == 'GET' && req.url === '/') {
+    const resBody = fs.readFileSync("./index.html");
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/html");
+    res.end(resBody);
+
+  }
   //!!END
 });
 

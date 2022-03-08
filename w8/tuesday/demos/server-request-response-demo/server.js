@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
         res.setHeader("Content-Type", "text/css");
         return res.end(resBody);
     }
-    
+
     let reqBody = "";
     req.on("data", (data) => {
         reqBody += data;
@@ -29,9 +29,9 @@ const server = http.createServer((req, res) => {
 
     req.on("end", () => {
         // Parsing the body of the request
+        console.log(reqBody);
         if (reqBody) {
-            req.body = reqBody
-                .split("&")
+            req.body = reqBody.split("&")
                 .map((keyValuePair) => keyValuePair.split("="))
                 .map(([key, value]) => [key, value.replace(/\+/g, " ")])
                 .map(([key, value]) => [key, decodeURIComponent(value)])
@@ -40,14 +40,13 @@ const server = http.createServer((req, res) => {
                     return acc;
                 }, {});
             console.log(req.body);
+            // app.use(express.urlencoded);
         }
-
-        if (req.method === 'POST' && req.url === '/messages') {
-            dailyMessage = req.body.dailyMessage;
+        if (req.method === "POST" && req.url === "/tasks") {
+            console.log(req.body);
             res.statusCode = 302;
-            res.setHeader('location', '/');
-            res.end();
-            return;
+            res.setHeader("Location", "/tasks");
+            return res.end();
         }
     });
 });
