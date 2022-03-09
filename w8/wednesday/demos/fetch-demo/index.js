@@ -1,19 +1,13 @@
-
-
 document.addEventListener("DOMContentLoaded", ev => {
     console.log('hello world');
     const form = document.querySelector("form");
-    form.addEventListener("submit", async ev => {
+    form.addEventListener("submit", ev => {
         ev.preventDefault();
         const input = document.querySelector("input");
         const number = input.value;
 
 
-        const res = await fetch(`https://swapi.dev/api/people/${number}`, {
-            method: 'POST',
-            body: JSON.stringify({'title': title}),
-            headers: {'content-type': 'application/json'}
-        });
+        const res = await fetch(`https://swapi.dev/api/people/${number}`);
         console.log(res);
         const data = await res.json();
         console.log(data);

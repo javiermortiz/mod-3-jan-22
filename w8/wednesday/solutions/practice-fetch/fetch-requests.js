@@ -40,7 +40,7 @@ fetch("/products")
 //!!START
 // using Promise chain (.then)
 fetch("/products")
-  .then(res => console.log(res.headers.get('Content-Type')));
+  .then(res => console.log(...res.headers));
 
 // using async/await
 (async function() {
@@ -56,12 +56,13 @@ fetch("/products")
 //!!START
 // using Promise chain (.then)
 fetch("/products")
-  .then(res => res.text())
+  .then(res => res.json())
   .then(resBody => console.log(resBody));
 
 // using async/await
 (async function() {
   const res = await fetch("/products");
+  console.log(res);
   const resBody = await res.text();
   console.log(resBody);
 })();
