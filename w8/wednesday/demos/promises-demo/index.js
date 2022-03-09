@@ -28,6 +28,8 @@ function openingCrawlBroken(time) {
     }, time);
 }
 
+// openingCrawlBroken(2000);
+
 // V2 works but unreadable
 function openingCrawlNested(time) {
     setTimeout(() => {
@@ -57,27 +59,39 @@ function openingCrawlNested(time) {
     }, time);
 }
 
+// openingCrawlNested(2000);
 // Wraps setTimeout with a Promise
+
+function sum(n1, n2) {
+    return n1 + n2;
+}
 function wait(ms) {
     return new Promise((resolve, reject) => {
+        if (ms < 2000) {
+            reject('Ms less than 2000');
+        }
         setTimeout(() => {
-            resolve()
+            ms -= 1000;
+            resolve({sum, ms});
         }, ms);
     });
 }
 
 // V3 with promise chaining
 function openingCrawlChain(time) {
-    wait(time)
-        .then(() => {
+    return wait(time)
+        .then((obj) => {
             console.log(`It is a period of civil war.
                      Rebel spaceships, striking
                      from a hidden base, have won
                      their first victory against
                      the evil Galactic Empire.`);
-            return wait(time);
+            console.log(obj.sum(obj.ms, obj.ms));
+            // return wait(time);
+            return 5
         })
-        .then(() => {
+        .then((prevVal) => {
+            console.log(prevVal);
             console.log(`During the battle, Rebel
                          spies managed to steal secret
                          plans to the Empire's
@@ -95,8 +109,14 @@ function openingCrawlChain(time) {
                              stolen plans that can save
                              her people and restore
                              freedom to the galaxy....`);
-        });
+            return 42;
+        })
+        .catch((message) => console.log(message));
 }
+
+openingCrawlChain(2000).then(result => console.log(result));
+
+
 
 // V4 with async and await
 async function openingCrawlAsync(time) {
@@ -124,4 +144,4 @@ async function openingCrawlAsync(time) {
                         freedom to the galaxy....`);
 }
 
-openingCrawlAsync(2000);
+// openingCrawlAsync(2000);
