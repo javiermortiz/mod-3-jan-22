@@ -9,11 +9,38 @@ add.addEventListener("click", async () => {
 
         // URL of new dog image
         const url = data.message;
-
+        console.log(url);
         // Get breed (Hint: Parse from URL)
         const breed = url.split('/')[4];
 
-        // Create element to inject 
+        // const newLi = `
+        //     <li>
+        //         <figure>
+        //             <img src=${url}>
+        //             <figcaption>${breed}</figcaption>
+        //         </figure>
+        //     </li>
+        // `;
+        // const ul = document.querySelector('ul');
+        // ul.innerHTML += newLi;
+        // Create element to inject
+        /*
+        <ul>
+            <li>
+            <figure>
+                <img src=https://dog.ceo/api/breeds/image/random>
+                <figcaption>Poodle</figcaption>
+            </figure>
+            </li>
+        </ul
+        
+
+        
+
+        
+
+        
+        */
         const newDog = document.createElement("li");
 
         const newFigure = document.createElement("figure");
