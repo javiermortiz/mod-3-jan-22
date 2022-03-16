@@ -1,4 +1,4 @@
-const myFunc = e => {
+function myFunc (e) {
     console.log(e);
     // phase 1
     const modal = document.getElementById("modal");
