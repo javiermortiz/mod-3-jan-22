@@ -1,0 +1,7 @@
+li {
+    /* Add some styles to list elements */
+}
+
+li[data-category='drinks'] {
+    color: 'red';
+}

@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (value === "red") {
             redInput.style.backgroundColor = "red";
         } else {
-            redInput.style.backgroundColor = "transparent";
+            redInput.style.backgroundColor = "";
         }
     }
 
@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const colorSelect = document.getElementById("color-select");
     const changeColor = e => {
         const section = document.getElementById("part-3");
-        section.style.backgroundColor = e.target.value;
+        section.style.backgroundColor = colorSelect.value;
     }
 
     colorSelect.addEventListener("change", changeColor);
@@ -44,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
         redInput.removeEventListener("input", changeRed);
         addItem.removeEventListener("click", addLi);
         colorSelect.removeEventListener("change", changeColor);
+        window.location.reload();
     })
 });
 
